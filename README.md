@@ -1,5 +1,5 @@
 # 📃 PlatonovGen
-[![readme.jpg](http://anopic.ag/NjU4eMabP9xSK5BcjENdmmoJND9PpUW4Xii4yZlb.jpg)](http://anopic.ag/NjU4eMabP9xSK5BcjENdmmoJND9PpUW4Xii4yZlb.jpg)
+[![readme.jpg](https://i.postimg.cc/Pq07qrT1/1711580799261zstucq6c.jpg)](https://i.postimg.cc/Pq07qrT1/1711580799261zstucq6c.jpg)
 
 ## Project Description
 
@@ -13,7 +13,8 @@ This project features a CharRNN for generating texts in the style of the writer 
   - [Files](#files)
   - [Dataset](#dataset)
   - [CharRNN](#charrnn)
-  - [Web Service](#web-service)
+  - [How to Set Up the Project](#how-to-set-up-the-project)
+  - [How to Use the Project](#how-to-use-the-project)
   - [Include Credits](#include-credits)
       - [Author](#author)
       - [Course](#course)
@@ -21,9 +22,9 @@ This project features a CharRNN for generating texts in the style of the writer 
 
 ## Files
 - [rnn_training.ipynb](https://github.com/moxeeem/PlatonovGen/blob/main/rnn.ipynb) : Jupyter Notebook with RNN training
-- [rnn.net](https://github.com/moxeeem/PlatonovGen/blob/main/rnn.net) : File with trained RNN
 - [Platonov8.txt](https://github.com/moxeeem/PlatonovGen/blob/main/Platonov8.txt) : Dataset
-
+- [/app](https://github.com/moxeeem/PlatonovGen/blob/main/app) : FastApi service files
+- [/app/CharRNN.py](https://github.com/moxeeem/PlatonovGen/blob/main/app/CharRNN.py) : CharRNN model
 
 ## Dataset
 The complete collection of Andrei Platonov's works (8 volumes) was used as a dataset for model training. 
@@ -65,11 +66,42 @@ In the end, we managed to get a model that can generate text with a style simila
 
 Generation example:
 
-<a href="http://anopic.ag/pGiSH6Ifca1OhnAfXjiKaYxlxKJatZYWW3UZ9sof.jpg"><img src="http://anopic.ag/pGiSH6Ifca1OhnAfXjiKaYxlxKJatZYWW3UZ9sof.jpg" width="75%"/></a>
+<a href="https://i.postimg.cc/QxVd204w/2024-02-03-224158.png"><img src="https://i.postimg.cc/QxVd204w/2024-02-03-224158.png" width="75%"/></a>
 
-## Web Service
-...
+## How to Set Up the Project
 
+You can set up the project in two ways - using docker image or using virtual environment.
+
+1. Using [docker image](https://hub.docker.com/repository/docker/moxeeeem/platonovgen/general)
+   
+   1. Download the image using command: 
+      `docker pull moxeeeem/platonovgen`
+   2. Run the image using command:
+      `docker run -d -p 8000:8000 moxeeeem/platonovgen` 
+   3. Go to http://localhost:8000/docs in your browser to see the service.
+   
+
+2. Using virtual environment
+   
+   1. Download the project files from github
+   2. Create a virtual environment
+      `python3 -m venv venv`
+   3. Activate the virtual environment
+      `source venv/bin/activate`
+   4. Install requirements
+      `pip install -r requirements.txt`
+   5. Run the project
+      `uvicorn main:app --reload`
+
+
+## How to Use the Project
+
+You can generate text in two ways - from request or from text file.
+
+1. From request using `/generate_text/` endpoint
+2. From text file using `/generate_text_from_file/` endpoint
+   
+   You can use *.txt or *.csv files.
 
 ## Include Credits
 
