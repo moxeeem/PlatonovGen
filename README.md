@@ -1,5 +1,5 @@
 # 📃 PlatonovGen
-[![readme.jpg](https://i.postimg.cc/Pq07qrT1/1711580799261zstucq6c.jpg)](https://i.postimg.cc/Pq07qrT1/1711580799261zstucq6c.jpg)
+![img](https://github.com/moxeeem/PlatonovGen/blob/main/img.jpg)
 
 ## Project Description
 
